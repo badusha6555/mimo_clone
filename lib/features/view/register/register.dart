@@ -15,7 +15,7 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController fullNameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  // Email validation method
+ 
   bool isValidEmail(String email) {
     return RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
         .hasMatch(email);
@@ -52,8 +52,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Gap(10),
-                // Full Name
+                Gap(10),   
                 _buildTextField(
                   controller: fullNameController,
                   hintText: 'Full name',
@@ -65,7 +64,6 @@ class RegisterScreen extends StatelessWidget {
                   },
                 ),
                 Gap(10),
-                // Email
                 _buildTextField(
                   controller: emailController,
                   hintText: 'Email',
@@ -80,7 +78,6 @@ class RegisterScreen extends StatelessWidget {
                   },
                 ),
                 Gap(10),
-                // Password
                 _buildTextField(
                   controller: passwordController,
                   hintText: 'Password',
@@ -95,8 +92,7 @@ class RegisterScreen extends StatelessWidget {
                     return null;
                   },
                 ),
-                Gap(10),
-                // Confirm Password
+                Gap(10), 
                 _buildTextField(
                   controller: confirmPasswordController,
                   hintText: 'Confirm Password',
@@ -112,10 +108,10 @@ class RegisterScreen extends StatelessWidget {
                   },
                 ),
                 Gap(30),
-                // Register Button
+                
                 ElevatedButton(
                   onPressed: () {
-                    String email = emailController.text.trim(); // Remove spaces
+                    String email = emailController.text.trim(); 
                     if (!isValidEmail(email)) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("Invalid email format")),
@@ -154,7 +150,6 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
                 Gap(10),
-                // Login Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -185,8 +180,6 @@ class RegisterScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Helper widget for reusable TextFormField
   Widget _buildTextField(
       {required TextEditingController controller,
       required String hintText,
