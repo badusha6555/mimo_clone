@@ -9,7 +9,7 @@ class FireStoreServices {
     try {
       await _collection.doc(model.id).set(model.toMap());
     } catch (e) {
-      rethrow; // Handle the exception as needed
+      rethrow; 
     }
   }
 
