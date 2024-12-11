@@ -18,11 +18,8 @@ class AuthServices {
     }
 
     try {
-      // Create user in Firebase Authentication
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
-
-      // Save additional user details in Firestore
       await FirebaseFirestore.instance
           .collection('users')
           .doc(userCredential.user!.uid)
