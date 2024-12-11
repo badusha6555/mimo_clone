@@ -64,7 +64,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
-          // Quote Card Section
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Card(
